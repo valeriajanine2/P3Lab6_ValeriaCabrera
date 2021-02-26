@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include "Cancion.hpp"
+//#include "Playlist.hpp"
 
 using namespace std;
 
@@ -16,6 +17,7 @@ class Album{
 	public:
 		Album();
 		Album(string,vector<Cancion*>,string);
+		Album(string);
 		~Album();
 		void setNombre(string);
 		void setArtista(string);
@@ -23,6 +25,9 @@ class Album{
 		string getArtista();
 		vector<Cancion*> getCanciones();
 		void listarCanciones();
+		Album* operator * (int);
+		Album* operator + (Cancion*);
+		void setListaCanciones(vector<Cancion*>);
 };
 
 #endif
