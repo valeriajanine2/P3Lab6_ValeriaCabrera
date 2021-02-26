@@ -146,6 +146,23 @@ int main(int argc, char** argv) {
 							
 							//eliminar canciones
 							
+							if(genres.size()!=0){
+								
+								int index;
+								
+								cout<<"Ingrese el indice de la cancion que desea eliminar: ";
+								cin>>index;
+								while(index>songs.size() || index<0){
+									cout<<"No existe una cancion en ese indice"<<endl;
+									cout<<"Ingrese el indice de la cancion que desea eliminar: ";
+									cin>>index;
+								}
+								
+								songs.erase(songs.begin()+index);
+								
+							}else{
+								cout<<"No se puede crear una cancion si no hay generos creados"<<endl;
+							}
 							
 							
 							break;
@@ -153,35 +170,95 @@ int main(int argc, char** argv) {
 						
 						case 4:{
 							
+							//listar canciones
+							
+							listarCanciones(songs);
+							
 							break;
 						}
 						
 						case 5:{
+							
+							//crear genero
+							
+							string nombre;
+							
+							cout<<"Nombre: ";
+							cin>>nombre;
+							
+							Genero* g = new Genero(nombre);
+							
+							genres.push_back(g);
+							
 							
 							break;
 						}
 						
 						case 6:{
 							
+							//modificar genero
+							
+							int index;
+							string nombre;
+							
+							cout<<"Ingrese el numero del genero que desea modificar: ";
+							cin>>index;
+							while(index>genres.size() || index<0){
+								cout<<"No existe un genero con ese indice"<<endl;
+								cout<<"Ingrese el numero del genero que desea modificar: ";
+								cin>>index;
+							}
+							
+							cout<<"Nuevo nombre: ";
+							cin>>nombre;
+							
+							Genero* g = new Genero();
+							g = genres.at(index);
+							g->setNombre(nombre);
+							
 							break;
 						}
 						
 						case 7:{
+							
+							//eliminar genero
+							
+							int index;
+							
+							cout<<"Ingrese el numero del genero que desea eliminar: ";
+							cin>>index;
+							while(index>genres.size() || index<0){
+								cout<<"No existe un genero con ese indice"<<endl;
+								cout<<"Ingrese el numero del genero que desea eliminar: ";
+								cin>>index;
+							}
+							
+							genres.erase(genres.erase(genres.begin()+index));
 							
 							break;
 						}
 						
 						case 8:{
 							
+							//listar genero
+							
+							listarGeneros(genres);
+							
 							break;
 						}
 						
 						case 9:{
 							
+							//listar albumes
+							
+							
+							
 							break;
 						}
 						
 						case 10:{
+							
+							//listar playlists
 							
 							break;
 						}

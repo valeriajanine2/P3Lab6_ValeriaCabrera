@@ -14,6 +14,17 @@ Album::~Album(){
 	//destruir el objeto
 }
 
+void Album::listarCanciones(){
+	
+	cout<<"Playlist: "<<this->nombre<<" - "<<this->artista<<endl;
+	
+	for(int i = 0; i < listaCanciones.size(); i++){
+		Cancion* c = new Cancion();
+		c = listaCanciones.at(i);
+		cout<<i<<") "<<c->getNombre()<<" - "<<c->getArtista()<<" Genero: "<<c->getGenero()->getNombre()<<" Duracion: "<<c->getDuracion()<<endl;
+	}
+}
+
 void Album::setNombre(string nombre){
 	this->nombre=nombre;
 }

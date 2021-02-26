@@ -35,6 +35,10 @@ Genero* Cancion::getGenero(){
 	return this->genero;
 }
 
+void Cancion::setGenero(Genero* genero){
+	this->genero=genero;
+}
+
 void Cancion::setDuracion(string nombre){
 	this->duracion=duracion;
 }

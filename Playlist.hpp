@@ -19,6 +19,7 @@ class Playlist{
 		void setNombre(string);
 		string getNombre();
 		vector<Cancion*> getListaCanciones();
+		void listarCanciones();
 };
 
 #endif

@@ -22,6 +22,7 @@ class Album{
 		string getNombre();
 		string getArtista();
 		vector<Cancion*> getCanciones();
+		void listarCanciones();
 };
 
 #endif
